@@ -22,6 +22,7 @@ def reverse_list(head)
   prev
 end
 
+# Recursive Solution
 # @param {ListNode} head
 # @return {ListNode}
 def reverse_list(head)
