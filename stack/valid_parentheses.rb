@@ -10,7 +10,7 @@ def is_valid(s)
   
   s.each_char do |char|
     if close_to_open.include?(char)
-      if stack and stack.last == close_to_open[char]
+      if stack && stack.last == close_to_open[char]
         stack.pop
       else
         return false

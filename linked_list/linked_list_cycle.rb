@@ -15,7 +15,7 @@ def hasCycle(head)
   end
   
   slow, fast = head, head.next
-  while fast and fast.next
+  while fast && fast.next
     return true if fast == slow
     slow = slow.next
     fast = fast.next.next
