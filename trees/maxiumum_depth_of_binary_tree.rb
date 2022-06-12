@@ -24,7 +24,7 @@ def max_depth(root)
   
   maximum_depth = 0
   stack = [[root, 1]]
-  while not stack.empty?
+  while !stack.empty?
     node, depth = stack.pop
     stack.push([node.left, depth + 1]) if node.left
     stack.push([node.right, depth + 1]) if node.right    
@@ -41,7 +41,7 @@ def max_depth(root)
   return 0 unless root 
   depth = 0
   queue = Queue.new([root])
-  while not queue.empty?
+  while !queue.empty?
     (0..queue.size - 1).each do
       popped = queue.pop
       queue << popped.left if popped.left
