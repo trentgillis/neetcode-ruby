@@ -10,12 +10,15 @@
 # @param {TreeNode} root
 # @return {Boolean}
 def is_balanced(root)
+  @is_balanced = true
+  
   def dfs(node)
-    return [true, 0] unless node 
+    return 0 unless node
     left, right = dfs(node.left), dfs(node.right)
-    is_balanced = left[0] && right[0] && (left[1] - right[1]).abs <= 1 
-    [is_balanced, 1 + [left[1], right[1]].max]
+    @is_balanced = @is_balanced && (left - right).abs <= 1
+    1 + [left, right].max
   end
   
-  dfs(root)[0]
+  dfs(root)
+  @is_balanced
 end
